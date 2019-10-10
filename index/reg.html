@@ -5,7 +5,7 @@
     <title>注册</title>
 </head>
 <body>
-<form action="reg.php" method="post">
+<form action="reg.php" method="post" onsubmit="return check();">
     <div class="reg">
         <div class="reg_2">
             <p>用户名：</p>
@@ -24,5 +24,15 @@
     </div>
 
 </form>
+<script>
+    function check() {
+        var username = document.getElementById("username").value;
+        if(username==null||username==""){
+            alert("用户名不能为空");
+            return false;
+        }
+
+    }
+</script>
 </body>
 </html>

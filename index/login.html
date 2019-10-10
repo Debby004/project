@@ -5,7 +5,7 @@
     <title>登录</title>
 </head>
 <body>
-<form action="login.php" method="post">
+<form name="myForm" action="login.php" onsubmit="return check()" method="post">
     <div class="login">
         <div class="login_2">
             <p>用户名：</p>
@@ -23,4 +23,18 @@
 
 </form>
 </body>
+<script>
+    function check() {
+        var username = document.forms["myForm"]["username"].value;
+        var password = document.getElementById("password").value;
+        if (username==null || username==""){
+            alert("用户名不能为空!");
+            return false;
+        }else if(password==null || password==""){
+            alert("密码不能为空!");
+            return false;
+        }
+    }
+
+</script>
 </html>
